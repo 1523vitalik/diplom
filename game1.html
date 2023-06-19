@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Игра</title>
+    <link rel="stylesheet" href="game1.css">
+</head>
+<body>
+    <div class="main">
+  <!-- <div class="logo"> -->
+            <!--<p class="logo_up">SQL</p>-->
+           <!-- <p class="logo_down">Игра</p>-->
+       <!-- </div>-->
+        <div class='button-container'>
+           <button onclick="openModal1()" class='action-button'>Теория</button>
+        </div>        <div class='button-container'>
+            <button onclick="openModal()" class='action-button'>Предметная область</button>
+        </div>        <div class='button-container'>
+            <a href="index.html"><button class='action-button'>На главную</button></a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="board">
+        </div>
+    </div>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="jquery/jquery-ui.min.js"></script>
+    <script src="game1.js"></script>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+@font-face {
+	font-family: 'Riffic.ttf'; 
+	src: url(./font/ofont.ru_Riffic.ttf); 
+}
+.container {
+    max-width:100%;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .board {
+    width: 1100px;
+    margin: 1em auto;
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 0 5px #888888;
+  }
+  
+  .board ul {
+    width: 100%;
+    margin: 0;
+    padding:0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  
+  #submit-button {
+    padding: 1em 2em;
+    background-color: #a3a3a3;
+    color: white;
+    border-radius: 0.5em;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #888888;
+    transition: all 0.3s ease;
+  }
+  
+#submit-button:hover {
+  background-color: hsl(216,100%,65%);
+}
+.board #input-value {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  font-size: 20px;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.board label{
+  display: block;
+  width: 100px;
+}
+
+input[type="text"] {
+  font-size: 16px;
+  color: #333;
+  border: 2px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: none;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+.main{
+  height: 100px;
+  max-width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  margin: 10px;
+}
+
+.action-button{
+	background: linear-gradient(hsl(216,100%,72%), hsl(216,100%,65%));
+	border-bottom: 5px solid hsla(216, 100%, 60%, 1);
+	text-shadow: 0px -2px hsl(216, 100%, 60% );
+	padding: 10px 40px;
+	display:inline-block;
+	left:50%;
+	border-radius: 5px;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+	box-shadow:0px 3px 10px rgb(189, 189, 189);
+	letter-spacing:0px;
+}
+button{
+	border:none;
+	outline:none;
+	cursor:pointer;
+}
+.action-button:active{
+	transform: translate(0px,8px);
+	-webkit-transform: translate(0px,8px);
+	border-bottom: 0px solid hsla(0, 0%, 100%, 0);
+	box-shadow:0px 1px 10px #888;
+  letter-spacing:.5px;
+}
+.logo_up{
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 20px;
+}
+.logo_down{
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 20px;
+}
+.logo{
+  line-height: 0.1cm;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.list1{
+  color: rgb(196, 106, 175);
+  font-family: 'Arial', Gadget, sans-serif;
+}
+
+.list2{
+  color: rgb(59, 59, 138);
+  font-family: 'Arial', Gadget, sans-serif;
+}
+
+.list3{
+  color: rgb(97, 63, 133);
+  font-family: 'Arial', Gadget, sans-serif;
+}
+.list4{
+  color: rgb(49, 206, 180);
+  font-family: 'Arial', Gadget, sans-serif;
+}
+.board .list2 li{
+  width: calc(3% - 1em);
+  margin: 0.5em;
+  text-align: center;
+  cursor:grab;
+  padding: 1em;
+  background-color: #FFFFFF;
+  border: 1px solid #DEDEDE;
+  border-radius: 0.5em;
+  box-shadow: 0 0 5px  rgb(151, 151, 206);
+  list-style-type: none;
+  font-size: 15px;
+}
+.board .list1 li{
+  width: calc(10% - 1em);
+  margin: 0.5em;
+  text-align: center;
+  cursor:grab;
+  padding: 1em;
+  background-color: #FFFFFF;
+  border: 1px solid #DEDEDE;
+  border-radius: 0.5em;
+  box-shadow: 0 0 5px rgb(212, 165, 201);
+  list-style-type: none;
+  font-size: 15px;
+}
+.board .list3 li{
+  width: calc(10% - 1em);
+  margin: 0.5em;
+  text-align: center;
+  cursor:grab;
+  padding: 1em;
+  background-color: #FFFFFF;
+  border: 1px solid #DEDEDE;
+  border-radius: 0.5em;
+  box-shadow: 0 0 5px rgb(180, 155, 207);
+  list-style-type: none;
+  font-size: 15px;
+}
+.board .list4 li{
+  width: calc(10% - 1em);
+  margin: 0.5em;
+  text-align: center;
+  cursor:grab;
+  padding: 1em;
+  background-color: #FFFFFF;
+  border: 1px solid #DEDEDE;
+  border-radius: 0.5em;
+  box-shadow: 0 0 5px rgb(82, 209, 160);
+  list-style-type: none;
+  font-size: 15px;
+}
+.board .list1 li:hover {
+  background-color: rgb(230, 211, 225);
+}
+.board .list2 li:hover {
+  background-color: rgb(212, 212, 238);
+}
+.board .list3 li:hover {
+  background-color:rgb(220, 208, 235);
+}
+.board .list4 li:hover {
+  background-color:rgb(198, 255, 241);
+}
+#style-text{
+	font-family: 'Riffic.ttf'; 
+} 
+
+.modal {
+  display: none; /* скрываем модальное окно по умолчанию */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* темный полупрозрачный фон */
+}
+
+.modal-dialog {
+  margin: 10% auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 20px;
+}
+
+.modal-header {
+  background-color: #2196F3;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 35px;
+  font-size: 25px;
+  font-family: "Your Font Name", Arial, sans-serif;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.modal-body {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-footer {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+  text-align: right;
+}
+.level-button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: 'Riffic.ttf'; 
+}
+.level-button.active {
+  background-color: #000000;
+  color: white;
+  border-radius: 5px;
+  
+}
+.level-button.completed {
+	background: linear-gradient(hsl(216,100%,72%), hsl(216,100%,65%));
+  border-radius: 5px;
+}
+#clear-input-button{
+  padding: 1em 2em;
+  background-color: #a3a3a3;
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #888888;
+  transition: all 0.1s ease;  
+  margin:0 0 0 1em;
+}
+#clear-input-button:hover {
+  background-color: #000000;
+}
+#remove-last-button{
+  padding: 1em 2em;
+  background-color: #a3a3a3;
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  margin:0 1em 0 0;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #888888;
+  transition: all 0.3s ease; 
+}
+#remove-last-button:hover {
+  background-color: #000000;
+}

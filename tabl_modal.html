@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Схемы</title>
+    <link rel="stylesheet" href="table.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Описание предметной области</h1>
+      <p class="description">
+        База данных хранит информацию о кинофильмах и их создателях. Одна и та же персона может иметь разный характер участия (режиссер, актер, композитор и т.д.) в одном фильме и роль (у актеров). Для каждого кинофильма указывается только один жанр. Страна производства кинофильма соответствует стране, в которой расположена киностудия. База данных должна содержать информацию о бюджете фильма и сумме сбора (в долларах США).
+      </p>
+      <div class="gallery">
+        <div class="slide">
+          <div class="img_1"></div>
+          <div class="slide-caption">
+          <h1>Концептуальная модель базы данных</h1>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="img_2"></div>
+          <div class="slide-caption">
+            <h1>Физическая модель базы данных</h1>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="img_3"></div>
+          <div class="slide-caption">
+            <h1>Movies</h1>
+           <p class ="pi">id_movie – идентификатор фильма</p>
+            <p class ="pi">movie – название фильма</p>
+            <p class ="pi">year – год выхода фильма на экран</p>
+            <p class ="pi">duration – продолжительность фильма</p>
+            <p class ="pi">film_studio – киностудия </p>
+            <p class ="pi">country – страна расположения киностудии</p>
+            <p class ="pi">id_genre – идентификатор жанра</p>
+            <p class ="pi">budget_dollar – бюджет фильма в долларах США</p>
+            <p class ="pi">fees_dollar – сумма сбора в долларах США</p>
+           
+          </div>
+        </div>
+        <div class="slide">
+          <div class="img_4"></div>
+          <div class="slide-caption">
+            <h1>Persons</h1>
+            <p class ="pi">id_person – идентификатор персоны</p>
+            <p class ="pi">full_name – имя и фамилия персоны</p>
+            <p class ="pi">country – страна проживания персоны</p>
+            <p class ="pi">birth_date – дата рождения персоны</p>
+            <p class ="pi">death_date – дата смерти персоны</p>
+              
+          </div>
+        </div>
+        <div class="slide">
+          <div class="img_5"></div>
+          <div class="slide-caption">
+            <h1>Creators</h1>
+         <p class ="pi">id_movie – идентификатор фильма</p>
+         <p class ="pi">id_person – идентификатор персоны</p>
+         <p class ="pi">creature – характер участия персоны</p>
+         <p class ="pi">role – роль (для актеров)</p>
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="img_6"></div>
+          <div class="slide-caption">
+            <h1>Genres</h1>
+            <p>
+              <p class ="pi">id_genre – идентификатор жанра</p>
+              <p class ="pi">genre – жанр кинофильма</p>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImg" src="" alt="Modal Image">
+      </div>
+    </div>
+    <script src="js.js"></script>
+  </body>
+</html>

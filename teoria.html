@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Теория</title>
+  <link rel="stylesheet" href="teoria.css">
+</head>
+<body>
+  <div class='button-container'>
+    <button onclick="goBack()" class='action-button left'>Назад</button>
+    </div>
+  <div class="container">
+    <h1>Выборка данных из таблицы</h1>
+  
+    <h2>Выборка всех данных из таблицы</h2>
+    <p>Для выборки всех данных из таблицы используется SQL запрос следующей структуры:</p>
+    <code>SELECT * FROM book;</code>
+    
+    <h2>Выборка отдельных столбцов</h2>
+    <p>Для выборки данных из определенных столбцов таблицы используется SQL запрос следующей структуры:</p>
+    <code>SELECT title, amount FROM book;</code>
+    
+    <h2>Выборка новых столбцов и присвоение им новых имен</h2>
+    <p>Для выборки данных из определенных столбцов таблицы и присвоения им новых имен используется SQL запрос следующей структуры:</p>
+    <code>SELECT title AS Название, amount FROM book;</code>
+    
+    <h2>Выборка данных с созданием вычисляемого столбца</h2>
+    <p>Для выборки данных с созданием вычисляемого столбца используется SQL запрос следующей структуры:</p>
+    <code>SELECT title, author, price, amount, price * amount AS total FROM book;</code>
+    
+    <h2>Выборка данных, вычисляемые столбцы, логические функции</h2>
+    <p>Для выборки данных с использованием вычисляемых столбцов и логических функций используется SQL запрос следующей структуры:</p>
+    <code>SELECT title, amount, price, ROUND(IF(amount&lt;4, price*0.5, IF(amount&lt;11, price*0.7, price*0.9)),2) AS sale, IF(amount&lt;4, 'скидка 50%', IF(amount&lt;11, 'скидка 30%', 'скидка 10%')) AS Ваша_скидка FROM book;</code>
+    <h2>Выборка данных по условию и логические операции</h2>
+  
+    <h2>Выборка данных по условию</h2>
+    <p>Для выборки данных по условию используется SQL запрос следующей структуры:</p>
+    <code>SELECT title, price FROM book WHERE price &lt; 600;</code>
+    
+    <h2>Выборка данных, логические операции</h2>
+    <p>Логическое выражение после ключевого слова WHERE может включать логические операции (И «and», ИЛИ «or», НЕ «not») и круглые скобки, изменяющие приоритеты выполнения операций.</p>
+    <p>Пример:</p>
+    <code>SELECT title, author, price FROM book WHERE price &gt; 600 AND author = 'Булгаков М.А.';</code>
+    <p>Пример с использованием скобок:</p>
+    <code>SELECT title, author, price FROM book WHERE (author = 'Булгаков М.А.' OR author = 'Есенин С.А.') AND price &gt; 600;</code>
+    <p>Обратите внимание, что использование скобок может быть важным, чтобы задать правильную логическую последовательность операций.</p>
+  
+    <h2>Оператор BETWEEN</h2>
+    <p>Оператор BETWEEN позволяет отобрать данные, относящиеся к некоторому интервалу, включая его границы.</p>
+    <p>Пример:</p>
+    <code>SELECT title, amount FROM book WHERE amount BETWEEN 5 AND 14;</code>
+    
+    <h2>Оператор IN</h2>
+    <p>Оператор IN позволяет выбрать данные, соответствующие значениям из списка.</p>
+    <p>Пример:</p>
+    <code>SELECT title, price FROM book WHERE author IN ('Булгаков М.А.', 'Достоевский Ф.М.');</code>
+    
+    <h2>Выборка данных с сортировкой</h2>
+    <p>При выборке данных можно указывать столбцы, по которым необходимо отсортировать строки. Для этого используется ключевое слово ORDER BY, после которого указываются имена столбцов.</p>
+    <p>Пример:</p>
+    <code>SELECT title, author, price FROM book ORDER BY title;</code>
+    <p>Пример с указанием направления сортировки:</p>
+    <code>SELECT author, title, amount AS "Количество" FROM book WHERE price < 750 ORDER BY author, amount DESC;</code>
+
+    <h2>Оператор LIKE</h2>
+    <p>Оператор LIKE используется для сравнения строк с шаблоном.</p>
+    <p>Символы-шаблоны:</p>
+    <ul>
+      <li><code>%</code>: любая строка, содержащая ноль или более символов</li>
+      <li><code>_</code>: любой одиночный символ</li>
+    </ul>
+    <p>Пример 1: Вывести названия книг, начинающихся с буквы "Б".</p>
+    <code>SELECT title FROM book WHERE title LIKE 'Б%';</code>
+    <p>Пример 2: Вывести название книг, состоящих ровно из 5 букв.</p>
+    <code>SELECT title FROM book WHERE title LIKE '_____';</code>
+    <p>Пример 3: Вывести книги, название которых длиннее 5 символов.</p>
+    <code>SELECT title FROM book WHERE title LIKE '______%';</code>
+    <p>Примечание: Шаблон "%" используется для отбора строк, состоящих из любого количества символов, включая "пустые" строки.</p>
+    <h2>Оператор LIKE</h2>
+    
+    <h2>Пример 4: Вывести названия книг, которые содержат букву "и" как отдельное слово</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title FROM book<br>
+      WHERE title LIKE '_% и _%' -- отбирает слово "и" внутри названия<br>
+      OR title LIKE 'и _%' -- отбирает слово "и" в начале названия<br>
+      OR title LIKE '_% и' -- отбирает слово "и" в конце названия<br>
+      OR title LIKE 'и' -- отбирает название, состоящее из одного слова "и"
+    </code>
+    
+    <h2>Пример 5: Вывести названия книг, которые состоят ровно из одного слова</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title FROM book<br>
+      WHERE title NOT LIKE '% %';
+    </code>
+    
+    <h2>Выбор уникальных элементов столбца</h2>
+    <p>Чтобы отобрать уникальные элементы некоторого столбца, используется ключевое слово DISTINCT, которое размещается сразу после SELECT.</p>
+    <p>Пример: Выбрать различных авторов, книги которых хранятся в таблице book.</p>
+    <code>SELECT DISTINCT author FROM book;</code>
+    
+    <h2>Групповые функции SUM и COUNT</h2>
+    <p>...</p>
+    
+    <p>Другой способ - использование оператора GROUP BY:</p>
+    <code>
+      SELECT author, SUM(amount), COUNT(amount)<br>
+      FROM book<br>
+      GROUP BY author;
+    </code>
+    <h2>Групповые функции SUM, COUNT, MIN, MAX и AVG</h2>
+    
+    <h2>Пример: Посчитать, сколько экземпляров книг каждого автора хранится на складе</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT author, SUM(amount) AS total_amount<br>
+      FROM book<br>
+      GROUP BY author;
+    </code>
+    
+    <h2>Пример: Вывести минимальную цену книги каждого автора</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT author, MIN(price) AS min_price<br>
+      FROM book<br>
+      GROUP BY author;
+    </code>
+    
+    <h2>Пример: Вывести суммарную стоимость книг каждого автора</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT author, SUM(price * amount) AS total_cost<br>
+      FROM book<br>
+      GROUP BY author;
+    </code>
+    
+    <h2>Пример: Найти среднюю цену книг каждого автора</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT author, ROUND(AVG(price), 2) AS average_price<br>
+      FROM book<br>
+      GROUP BY author;
+    </code>
+    
+    <h2>Вычисления по таблице целиком</h2>
+    
+    <p>Пример: Подсчитать общее количество книг на складе</p>
+    <code>SELECT COUNT(*) AS total_books FROM book;</code>
+    
+    <p>Пример: Вычислить суммарную стоимость всех книг на складе</p>
+    <code>SELECT SUM(price * amount) AS total_cost FROM book;</code>
+    <h2>Групповые функции SUM, COUNT, MIN, MAX и AVG</h2>
+    
+    <h2>Пример: Посчитать количество экземпляров книг на складе</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT SUM(amount) AS total_amount<br>
+      FROM book;
+    </code>
+    <h2>Пример: Посчитать общее количество экземпляров книг на складе и их стоимость</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT SUM(amount) AS total_amount, SUM(price * amount) AS total_cost<br>
+      FROM book;
+    </code>
+    
+    <h2>Выборка данных по условию, групповые функции, HAVING</h2>
+    <h2>Пример: Найти минимальную и максимальную цену книг всех авторов, общая стоимость книг которых больше 5000</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT author, MIN(price) AS min_price, MAX(price) AS max_price<br>
+      FROM book<br>
+      GROUP BY author<br>
+      HAVING SUM(price * amount) > 5000;
+    </code>
+    
+    <h2>Пример: Найти минимальную и максимальную цену книг всех авторов, общая стоимость книг которых больше 5000. Результат вывести по убыванию минимальной цены</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT author, MIN(price) AS min_price, MAX(price) AS max_price<br>
+      FROM book<br>
+      GROUP BY author<br>
+      HAVING SUM(price * amount) > 5000<br>
+      ORDER BY min_price DESC;
+    </code>
+    <h2>Выборка данных по условию, групповые функции, WHERE и HAVING</h2>
+    <h2>Вложенный запрос, возвращающий одно значение</h2>
+    
+    <h2>Пример: Вывести информацию о самых дешевых книгах, хранящихся на складе</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title, author, price, amount<br>
+      FROM book<br>
+      WHERE price = (<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;SELECT MIN(price)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;FROM book<br>
+      );
+    </code>
+    
+    <h2>Использование вложенного запроса в выражении</h2>
+    
+    <h2>Пример: Вывести информацию о книгах, количество экземпляров которых отличается от среднего количества экземпляров книг на складе более чем на 3</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title, author, amount<br>
+      FROM book<br>
+      WHERE ABS(amount - (SELECT AVG(amount) FROM book)) > 3;
+    </code>
+    <h2>Вложенный запрос, оператор IN</h2>
+    
+    <h2>Пример: Вывести информацию о книгах тех авторов, общее количество экземпляров книг которых не менее 12</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title, author, amount, price<br>
+      FROM book<br>
+      WHERE author IN (<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;SELECT author<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;FROM book<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;GROUP BY author<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;HAVING SUM(amount) >= 12<br>
+      );
+    </code>
+    <h2>Вложенный запрос, операторы ANY и ALL</h2>
+    <p>...</p>
+    
+    <h2>Пример: Вывести информацию о тех книгах, количество которых меньше самого маленького среднего количества книг каждого автора</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title, author, amount, price<br>
+      FROM book<br>
+      WHERE amount &lt; ALL (<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;SELECT AVG(amount)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;FROM book<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;GROUP BY author<br>
+      );
+    </code>
+    <h2>Пример: Вывести информацию о тех книгах, количество которых меньше самого большого среднего количества книг каждого автора</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title, author, amount, price<br>
+      FROM book<br>
+      WHERE amount &lt; ANY (<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;SELECT AVG(amount)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;FROM book<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;GROUP BY author<br>
+      );
+    </code>
+    
+    <h2>Вложенный запрос после SELECT</h2>
+    
+    <h2>Пример: Вывести информацию о книгах, количество экземпляров которых отличается от среднего количества экземпляров книг на складе более чем на 3, а также указать среднее значение количества экземпляров книг</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title, author, amount, <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;(<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SELECT AVG(amount)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM book<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;) AS Среднее_количество<br>
+      FROM book<br>
+      WHERE abs(amount - (SELECT AVG(amount) FROM book)) &gt; 3;
+    </code>
+    <h2>Пример: Вывести названия книг и их авторов</h2>
+    <p>Запрос:</p>
+    <code>
+      SELECT title, name_author<br>
+      FROM author, book<br>
+      WHERE author.author_id = book.author_id;
+    </code>
+    
+    <h2>Структура таблицы author</h2>
+    
+    <h2>Структура таблицы book</h2>
+  </div>
+  </body>
+  <script src="js.js"></script>
+</body>
+</html>
