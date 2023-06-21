@@ -381,13 +381,13 @@ for (let i = 0; i < levels.length; i++) {
 renderLevel(levels[currentLevelIndex]);
 
 function openModal() {
-  const modal = window.open('tabl_modal.html', '', 'width=800,height=600');
+  const modal = window.open('tabl_modal.html', '', 'width=1000,height=600');
   modal.document.write('<link rel="stylesheet" type="text/css" href="">');
   modal.document.write('<div class="modal-content">');
   modal.document.write('<iframe src="tabl_modal.html" frameborder="0" width="100%" height="100%"></iframe>');
 }
 function openModal1() {
-  const modal = window.open('teoria_modal.html', '', 'width=800,height=600');
+  const modal = window.open('teoria_modal.html', '', 'width=1000,height=600');
   modal.document.write('<link rel="stylesheet" type="text/css" href="">');
   modal.document.write('<div class="modal-content">');
   modal.document.write('<iframe src="teoria_modal.html" frameborder="0" width="100%" height="100%"></iframe>');

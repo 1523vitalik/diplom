@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Riffic.ttf'; 
-	src: url(./font/ofont.ru_Riffic.ttf); 
+	src: url('../font/ofont.ru_Riffic.ttf'); 
 }
 body {
 	text-align:center;
