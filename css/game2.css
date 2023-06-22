@@ -1,0 +1,129 @@
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tables {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 0 10px;
+}
+
+.table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.code-section {
+  margin-bottom: 20px;
+}
+
+.code-input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.next-level-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-level-btn.hide {
+  display: none;
+}
+
+.next-level-btn:hover {
+  background-color: #e53935;
+}
+.button-container{
+  max-width: 2000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+a{
+	font-family:sans-serif;
+}
+button{
+	border:none;
+	outline:none;
+	cursor:pointer;
+}
+.action-button:active{
+	transform: translate(0px,8px);
+	-webkit-transform: translate(0px,8px);
+	border-bottom: 0px solid hsla(216, 100%, 60%, 0);
+	box-shadow:0px 1px 10px #888;
+	letter-spacing:.5px;
+}
+
+.action-button{
+  background: linear-gradient(hsl(216,100%,72%), hsl(216,100%,65%));
+	border-bottom: 5px solid hsla(216, 100%, 60%, 1);
+	text-shadow: 0px -2px hsl(216, 100%, 60% );
+	padding: 10px 40px;
+	margin:20px;
+	left:50%;
+	border-radius: 5px;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+	box-shadow:0px 3px 10px #888;
+	letter-spacing:0px;
+}

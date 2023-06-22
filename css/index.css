@@ -1,0 +1,83 @@
+@font-face {
+	font-family: 'Riffic.ttf'; 
+	src: url('../font/ofont.ru_Riffic.ttf'); 
+}
+body {
+	text-align:center;
+	margin:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+.wrapper {
+	display:inline-block;
+	vertical-align:middle;
+	padding:80px 230px 130px 230px;
+	box-shadow:0px 5px 30px #888;
+	border-radius:15px;
+	border-bottom:solid 5px #888;
+	align-items: center;
+	justify-content: center;
+}
+.valign {
+	height:100%;
+	display:inline-block;
+	vertical-align:middle;
+}
+.button-container{
+	height:100px;
+	width:550px;
+}
+a{
+	font-family:sans-serif;
+}
+button{
+	border:none;
+	outline:none;
+	cursor:pointer;
+}
+.action-button:active{
+	transform: translate(0px,8px);
+	-webkit-transform: translate(0px,8px);
+	border-bottom: 0px solid hsla(216, 100%, 60%, 0);
+	box-shadow:0px 1px 10px #888;
+	letter-spacing:.5px;
+}
+.action-button{
+	background: linear-gradient(hsl(216,100%,72%), hsl(216,100%,65%));
+	border-bottom: 7px solid hsla(216, 100%, 60%, 1);
+	text-shadow: 0px -2px hsl(216, 100%, 60% );
+	padding: 10px 15px;
+	display:inline-block;
+	margin:20px;
+	left:50%;
+	border-radius: 5px;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+	box-shadow:0px 3px 10px #888;
+	letter-spacing:0px;
+	width: 100%;
+	
+}
+
+.red {
+	background: linear-gradient(hsl(216,100%,72%), hsl(216,100%,65%));
+	border-bottom: 7px solid hsla(216, 100%, 60%, 1);
+	text-shadow: 0px -2px hsl(216, 100%, 60% );
+	font-size: 25px;
+	width: 524px;
+}
+.name{
+	display: inline;
+}
+.game-title {
+	font-size: 40px;
+	text-align: center;
+	color: #000000;
+	font-family: 'Riffic.ttf'; 
+	width: 600px;
+	border-radius: 10px;
+}
